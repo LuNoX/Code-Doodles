@@ -12,7 +12,7 @@ def get_gazebo_state():
 				},
 		'goal': {
 					'p_x': 3,
-					'p_y': 4
+					'p_y': 5
 				},
 		'humans': 13.5
 	}
