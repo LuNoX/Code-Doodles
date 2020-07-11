@@ -12,6 +12,7 @@ def main():
 
 
 def goal_is_reached(state):
+	# TODO: properly implement. pay attention to coordinate systems and fuzzy locations. Maybe round them off?
 	return state['robot']['p_x'] == state['goal']['p_x'] and state['robot']['p_y'] == state['goal']['p_y']
 
 
