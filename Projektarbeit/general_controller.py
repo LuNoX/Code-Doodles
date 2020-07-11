@@ -1,4 +1,4 @@
-from gazebo_crowdnav_interface import BidirectionalCrowdNavGazeboInterface
+from crowdnav_gazebo_interface.crowdnav_gazebo_interface import BidirectionalCrowdNavGazeboInterface
 
 
 def main():
@@ -7,6 +7,7 @@ def main():
 	while not goal_is_reached(state):
 		action = interface.find_action_for_state(state)
 		state = interface.execute_action_and_get_new_state(action)
+		print(state)
 	return
 
 

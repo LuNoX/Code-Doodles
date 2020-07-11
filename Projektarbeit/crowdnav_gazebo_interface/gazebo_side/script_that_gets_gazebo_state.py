@@ -6,8 +6,14 @@ def main():
 
 def get_gazebo_state():
 	state = {
-		'robot': 5,
-		'goal': 12,
+		'robot': {
+					'p_x': 3,
+					'p_y': 4
+				},
+		'goal': {
+					'p_x': 3,
+					'p_y': 4
+				},
 		'humans': 13.5
 	}
 	return state

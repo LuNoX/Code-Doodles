@@ -1,5 +1,5 @@
-from crowdnav_side.crowdnav_controller import CrowdNavController
-from gazebo_side.gazebo_controller import GazeboController
+from .gazebo_side.gazebo_controller import GazeboController
+from .crowdnav_side.crowdnav_controller import CrowdNavController
 
 
 class BidirectionalCrowdNavGazeboInterface(GazeboController, CrowdNavController):
