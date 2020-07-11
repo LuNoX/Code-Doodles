@@ -38,7 +38,13 @@ def setup_shared_memory_space():
     shared_gazebo_to_crowdnav_memory= shm_gtc
 
 
-class CrowdNavGazeboInterfaceManager:
+class UnidirectionalGazeboToCrowdnavInterface:
+    def __init__(self, max_number_of_buffered_actions=10):
+        if max_number_of_buffered_actions < 1:
+            raise ValueError(f"max_number_of_buffered_actions is {max_number_of_buffered_actions}. Must be at least 1!")
+
+
+class UnidirectionalCrowdNavToGazeboInterface:
     def __init__(self, max_number_of_buffered_states=10):
         if max_number_of_buffered_states < 1:
             raise ValueError(f"max_number_of_buffered_states is {max_number_of_buffered_states}. Must be at least 1!")
@@ -84,19 +90,23 @@ class CrowdNavGazeboInterfaceManager:
 
     def pull_gazebo_state(self):
         # Get the state
-        new_state = ''  # TODO: implement
+        new_state = self.fetch_gazebo_state()
 
         # TODO: implement routine for when len() has more than 1 more than allowed
         # Check if the buffer limit has been reached
         if len(self.buffered_gazebo_states) == self.max_number_of_buffered_states:
-            # Delete the oldest entry and adjust the index accordingly
+            # Delete the oldest entry
             del self.buffered_gazebo_states[0]
-            self.current_gazebo_state_index -= 1
 
         # Buffer and return the state
         self.buffered_gazebo_states.append(new_state)
+        self.current_gazebo_state_index = len(buffered_gazebo_states - 1)
         self.last_method_success = True
         return new_state
+
+    def fetch_gazebo_state(self):
+        # TODO: implement
+        return True
 
     def push_crowdnav_action(self, crowdnav_action):
         # TODO: implement
