@@ -1,7 +1,7 @@
+from crowdnav_side.gazebo_controller import GazeboController
+from crowdnav_side.crowdnav_controller import CrowdNavController
 
-def main():
-	return
 
-
-if __name__ == '__main__':
-	main()
+class BidirectionalCrowdNavGazeboInterface(GazeboController, CrowdNavController):
+	# TODO: do coordinate and other conversions here
+	pass

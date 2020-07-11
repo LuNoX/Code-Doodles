@@ -1,17 +1,5 @@
+from script_that_generates_a_crowdnav_action_from_a_state import generate_crowdnav_action
 
-
-def main(state):
-	generate_crowdnav_action(state)
-
-
-def generate_crowdnav_action(state):
-	action = {
-		'v_x': 3,
-		'v_y': 4,
-		'omega': 2.5
-	}
-	return action
-
-
-if __name__ == '__main__':
-	main()
+class CrowdNavController:
+	def find_action_for_state(self, action):
+		return generate_crowdnav_action(action)
