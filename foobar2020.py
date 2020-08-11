@@ -147,8 +147,8 @@ def solution(w, h, s):
     # without the use of non-standard libraries I stumbled upon the possible
     # origin for the problem:
     # https://math.stackexchange.com/questions/2056708/number-of-equivalence-classes-of-w-times-h-matrices-under-switching-rows-and
-    # And would you look at that: it already provides
-    # a python solution. So let's use that one instead of implementing our own!
+    # And would you look at that: it already providesa python solution. 
+    # So let's use that one instead of implementing our own!
 
     return str(answer(w, h, s))
 
